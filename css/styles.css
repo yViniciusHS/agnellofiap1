@@ -338,10 +338,50 @@ body {
     margin-bottom: 1.5rem;
     mix-blend-mode: multiply; /* Remove o fundo branco se a imagem não for PNG transparente */
     transition: transform 0.5s ease;
+  
     filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); /* Sombra leve para realismo */
 }
 
 /* Efeito de zoom no hover sem desalinhamento */
 .product-card:hover .product-image { 
     transform: scale(1.08); 
+}
+
+/* Customização do Offcanvas */
+#cartOffcanvas {
+    border-left: none;
+    background-color: var(--light-bg);
+}
+
+.offcanvas-header {
+    background-color: var(--hero-bg);
+    color: var(--sand-button);
+}
+
+.offcanvas-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+}
+
+/* Letras com espaçamento para luxo */
+.letter-spacing-2 {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.text-gold {
+    color: #d4af37;
+}
+
+/* Garante que os links nos cards não alterem a estética */
+.product-card a {
+    text-decoration: none;
+    color: inherit; /* Mantém a cor original do texto */
+    display: block;
+}
+
+.product-card a:hover .product-title {
+    color: var(--sand-hover); /* Um leve efeito de cor no título ao passar o mouse */
+    transition: 0.3s;
 }

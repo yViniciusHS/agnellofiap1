@@ -3,104 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo | Vinheria Agnello</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Agnello | Detalhes do Produto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="bg-light-cream pt-5">
+<body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg fixed-top custom-navbar scrolled py-3">
-        <div class="container">
-            <a class="navbar-brand brand-font text-gold fs-3 text-uppercase fw-bold" href="index.html">Agnello</a>
-            <div class="ms-auto d-flex align-items-center gap-3">
-                <a href="perfil.html" class="btn btn-outline-light rounded-circle p-2 lh-1"><i class="bi bi-person"></i></a>
-                <button class="btn btn-gold rounded-pill px-4 fw-semibold" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
-                    <i class="bi bi-cart3"></i> Carrinho (<span class="cart-count">0</span>)
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <header class="bg-dark-wine text-white py-5 mt-4">
-        <div class="container text-center py-4">
-            <span class="text-gold letter-spacing-2 fw-semibold">EXPLORE NOSSA ADEGA</span>
-            <h1 class="display-4 brand-font fw-bold mt-2">Vinhos Excepcionais</h1>
+    <header class="custom-header py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="../index.html" class="logo fs-2">Agnello</a>
+            <a href="../index.html" class="text-white text-decoration-none"><i class="bi bi-arrow-left"></i> Voltar</a>
         </div>
     </header>
 
-    <main class="container py-5">
-        <div class="d-flex justify-content-center gap-3 mb-5">
-            <button class="btn btn-dark-wine rounded-pill px-4">Todos</button>
-            <button class="btn btn-outline-dark rounded-pill px-4">Tintos</button>
-            <button class="btn btn-outline-dark rounded-pill px-4">Brancos</button>
-            <button class="btn btn-outline-dark rounded-pill px-4">Rosés</button>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="product-card bg-white rounded-4 p-4 text-center shadow-sm h-100">
-                    <img src="https://images.unsplash.com/photo-1586154625514-4161fdf9fa72?q=80&w=400&auto=format&fit=crop" class="product-img mb-4" alt="Velvet Tempest">
-                    <h4 class="brand-font fw-bold text-dark mb-1">Velvet Tempest</h4>
-                    <p class="text-muted small">Tinto • 750ml</p>
-                    <p class="fs-4 text-dark fw-bold mb-4">R$ 185,00</p>
-                    <button class="btn btn-outline-dark rounded-pill w-100 py-2 fw-semibold btn-add-cart" 
-                            onclick="adicionarAoCarrinho('p1', 'Velvet Tempest', 185.00, 'https://images.unsplash.com/photo-1586154625514-4161fdf9fa72?q=80&w=400')">
-                        Adicionar ao Carrinho
-                    </button>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="product-card bg-white rounded-4 p-4 text-center shadow-sm h-100">
-                    <img src="https://images.unsplash.com/photo-1574041103683-0604f3780cb0?q=80&w=400&auto=format&fit=crop" class="product-img mb-4" alt="Sip Happens">
-                    <h4 class="brand-font fw-bold text-dark mb-1">Sip Happens</h4>
-                    <p class="text-muted small">Branco • 750ml</p>
-                    <p class="fs-4 text-dark fw-bold mb-4">R$ 142,00</p>
-                    <button class="btn btn-outline-dark rounded-pill w-100 py-2 fw-semibold btn-add-cart" 
-                            onclick="adicionarAoCarrinho('p2', 'Sip Happens', 142.00, 'https://images.unsplash.com/photo-1574041103683-0604f3780cb0?q=80&w=400')">
-                        Adicionar ao Carrinho
-                    </button>
+    <main class="container my-5 py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-md-6">
+                <div class="product-image-container bg-white rounded-4 shadow-sm p-5" style="height: 600px;">
+                    <img src="../img/Gemini_Generated_Image_qxx5exqxx5exqxx5 (1).png" class="product-image" alt="Vinho Selecionado">
                 </div>
             </div>
             
-            <div class="col-md-4">
-                <div class="product-card bg-white rounded-4 p-4 text-center shadow-sm h-100">
-                    <img src="https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?q=80&w=400&auto=format&fit=crop" class="product-img mb-4" alt="Sapphire Sunset">
-                    <h4 class="brand-font fw-bold text-dark mb-1">Sapphire Sunset</h4>
-                    <p class="text-muted small">Rosé • 750ml</p>
-                    <p class="fs-4 text-dark fw-bold mb-4">R$ 160,00</p>
-                    <button class="btn btn-outline-dark rounded-pill w-100 py-2 fw-semibold btn-add-cart" 
-                            onclick="adicionarAoCarrinho('p3', 'Sapphire Sunset', 160.00, 'https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?q=80&w=400')">
-                        Adicionar ao Carrinho
+            <div class="col-md-6">
+                <span class="text-muted letter-spacing-2">VINHO TINTO • ARGENTINA</span>
+                <h1 class="display-4 brand-font my-3">Valle Andino Reserva</h1>
+                <p class="fs-4 fw-bold text-dark">R$ 185,00</p>
+                
+                <p class="text-muted my-4 lead">
+                    Um blend sofisticado com notas de frutas vermelhas maduras e um toque sutil de carvalho. 
+                    Ideal para acompanhar carnes vermelhas e queijos maturados. Colheita selecionada de 2021.
+                </p>
+
+                <div class="d-grid gap-3">
+                    <button class="btn btn-dark btn-lg rounded-pill py-3 fw-bold" onclick="adicionarAoCarrinho('Valle Andino', 185)">
+                        ADICIONAR AO CARRINHO
                     </button>
+                    <div class="p-3 border rounded-4 d-flex align-items-center gap-3 bg-white">
+                        <i class="bi bi-truck text-gold fs-4"></i>
+                        <span class="small">Frete grátis para todo o Brasil em pedidos acima de R$ 500.</span>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <div class="offcanvas offcanvas-end bg-light-cream" tabindex="-1" id="cartOffcanvas">
-        <div class="offcanvas-header border-bottom bg-white">
-            <h5 class="brand-font fw-bold fs-4 mb-0">Seu Carrinho</h5>
-            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body d-flex flex-column">
-            <div id="cart-items-container" class="flex-grow-1 overflow-auto"></div>
-
-            <div class="mt-3 bg-white p-4 rounded-4 shadow-sm border">
-                <div class="d-flex justify-content-between mb-4">
-                    <span class="fs-5 fw-bold brand-font">Total</span>
-                    <span class="fs-5 fw-bold text-dark" id="cart-total">R$ 0,00</span>
-                </div>
-                <button class="btn btn-dark-wine w-100 rounded-pill py-3 fw-bold" onclick="alert('Funcionalidade de Checkout a ser implementada no Backend!')">FINALIZAR COMPRA</button>
-            </div>
-        </div>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="app.js"></script>
-    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
