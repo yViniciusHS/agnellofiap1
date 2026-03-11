@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil | Vinheria Agnello</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="bg-light-cream pt-5">
+
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar scrolled py-3">
+        <div class="container">
+            <a class="navbar-brand brand-font text-gold fs-3 text-uppercase fw-bold" href="index.html">Agnello</a>
+            <div class="ms-auto d-flex gap-3">
+                <a href="produtos.html" class="btn btn-outline-light rounded-pill px-4">Ir para a Loja</a>
+                <button class="btn btn-gold rounded-pill px-4 fw-semibold" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                    <i class="bi bi-cart3"></i> Carrinho (<span class="cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5 mt-5">
+        <div class="row g-4">
+            
+            <div class="col-lg-3">
+                <div class="bg-white p-4 rounded-4 shadow-sm border mb-4 text-center">
+                    <div class="bg-dark-wine text-gold rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px; font-size: 2rem;">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <h5 class="brand-font fw-bold">Olá, Vinicius</h5>
+                    <p class="text-muted small">Membro desde Março de 2026</p>
+                </div>
+
+                <div class="list-group rounded-4 shadow-sm border-0">
+                    <a href="#" class="list-group-item list-group-item-action profile-tab-link active bg-dark-wine text-white py-3 border-0" data-target="tab-clube"><i class="bi bi-star-fill text-gold me-2"></i> Clube Agnello</a>
+                    <a href="#" class="list-group-item list-group-item-action profile-tab-link py-3 border-0" data-target="tab-pedidos"><i class="bi bi-box-seam me-2"></i> Meus Pedidos</a>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                
+                <div id="tab-clube" class="profile-tab-content bg-white p-5 rounded-4 shadow-sm border">
+                    <h2 class="brand-font fw-bold mb-4">Clube Agnello</h2>
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="p-4 bg-light rounded-4 border border-warning">
+                                <h6 class="text-uppercase text-muted fw-bold mb-2">Pontos Acumulados</h6>
+                                <p class="display-4 brand-font text-gold fw-bold mb-0">1.450 <i class="bi bi-gem fs-4"></i></p>
+                                <small class="text-muted">Faltam 550 pontos para resgatar o voucher.</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-4 bg-light rounded-4 h-100 d-flex flex-column justify-content-center">
+                                <p class="fw-medium mb-2">Ganhe pontos provando uvas diferentes!</p>
+                                <div class="progress" style="height: 10px;">
+                                    <div class="progress-bar bg-gold" style="width: 70%"></div>
+                                </div>
+                                <small class="text-muted mt-2">Nível atual: Entusiasta</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-pedidos" class="profile-tab-content bg-white p-5 rounded-4 shadow-sm border d-none">
+                    <h2 class="brand-font fw-bold mb-4">Histórico de Pedidos</h2>
+                    <div class="border rounded-3 p-4 mb-3 d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="badge bg-success mb-2">Entregue</span>
+                            <h6 class="fw-bold mb-1">Pedido #10042</h6>
+                            <small class="text-muted">05 de Março de 2026 • 2 itens</small>
+                        </div>
+                        <span class="fw-bold fs-5">R$ 327,00</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="offcanvas offcanvas-end bg-light-cream" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header border-bottom bg-white">
+            <h5 class="brand-font fw-bold fs-4 mb-0">Seu Carrinho</h5>
+            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="cart-items-container" class="flex-grow-1 overflow-auto"></div>
+            <div class="mt-3 bg-white p-4 rounded-4 shadow-sm border">
+                <div class="d-flex justify-content-between mb-4">
+                    <span class="fs-5 fw-bold brand-font">Total</span>
+                    <span class="fs-5 fw-bold text-dark" id="cart-total">R$ 0,00</span>
+                </div>
+                <button class="btn btn-dark-wine w-100 rounded-pill py-3 fw-bold" onclick="alert('Funcionalidade de Checkout a ser implementada no Backend!')">FINALIZAR COMPRA</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
