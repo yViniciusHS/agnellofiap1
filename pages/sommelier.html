@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agnello | Sommelier Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .sommelier-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/b961f52d-f246-43c2-a1b8-5e05d8ff493a.png');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .pilar-card {
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .pilar-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--hero-bg);
+        }
+        .text-gold { color: #d4af37; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <header class="custom-header shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <a href="../index.html" class="logo fs-2">Agnello</a>
+            <nav>
+                <a href="../index.html" class="text-white text-decoration-none me-4">Loja</a>
+                <a href="perfil.html" class="text-white fs-4"><i class="bi bi-person-circle"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="sommelier-hero">
+        <div class="container">
+            <h1 class="brand-font display-3">Sommelier Digital</h1>
+            <p class="lead">A consultoria da Agnello para encontrar o rótulo perfeito.</p>
+        </div>
+    </section>
+
+    <section class="container my-5 py-5">
+        <div class="text-center mb-5">
+            <h2 class="brand-font">O que você vai comer ou celebrar?</h2>
+            <p class="text-muted">Nosso sommelier sugere o vinho ideal com base na sua ocasião.</p>
+        </div>
+
+        <div class="row justify-content-center g-4">
+            <div class="col-md-8">
+                <div class="input-group input-group-lg shadow-sm rounded-pill overflow-hidden border mb-5">
+                    <span class="input-group-text bg-white border-0 ps-4"><i class="bi bi-search text-gold"></i></span>
+                    <input type="text" class="form-control border-0" placeholder="Ex: 'Vinho para pizza de pepperoni' ou 'Peixe grelhado'..." id="sommelierSearch">
+                    <button class="btn btn-dark px-5" style="background-color: var(--hero-bg); border: none;">RECOMENDAR</button>
+                </div>
+
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <button class="btn btn-outline-dark rounded-pill px-4 py-2"><i class="bi bi-fire me-2"></i>Churrasco</button>
+                    <button class="btn btn-outline-dark rounded-pill px-4 py-2"><i class="bi bi-heart-fill me-2 text-danger"></i>Jantar Romântico</button>
+                    <button class="btn btn-outline-dark rounded-pill px-4 py-2"><i class="bi bi-gift me-2"></i>Para Presentear</button>
+                    <button class="btn btn-outline-dark rounded-pill px-4 py-2"><i class="bi bi-sun me-2 text-warning"></i>Dia na Piscina</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white border-top">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="brand-font display-5">Aprenda a Degustar</h2>
+                    <p class="lead text-muted">Não precisa ser expert para apreciar. Entenda os 5 pilares fundamentais que compõem o sabor de cada garrafa.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <img src="../img/Gemini_Generated_Image_kwhst8kwhst8kwhs (1).png" class="img-fluid rounded-4 shadow" style="max-height: 300px;" alt="Taça de vinho">
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="pilar-card p-4 rounded-4 bg-light h-100">
+                        <span class="display-6 text-gold fw-bold">01</span>
+                        <h4 class="brand-font mt-2">Corpo</h4>
+                        <p class="small text-muted">Pense no corpo como a textura: um vinho leve parece <b>água</b> na boca, um de corpo médio parece <b>leite desnatado</b> e um encorpado parece <b>leite integral</b>.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pilar-card p-4 rounded-4 bg-light h-100">
+                        <span class="display-6 text-gold fw-bold">02</span>
+                        <h4 class="brand-font mt-2">Taninos</h4>
+                        <p class="small text-muted">Vêm da casca da uva. É aquela sensação que "amarra" a boca, parecida com comer uma <b>banana verde</b> ou tomar chá preto forte.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pilar-card p-4 rounded-4 bg-light h-100">
+                        <span class="display-6 text-gold fw-bold">03</span>
+                        <h4 class="brand-font mt-2">Acidez</h4>
+                        <p class="small text-muted">É o que traz frescor. Se você começa a <b>salivar</b> logo após o gole (como ao morder um limão), o vinho tem alta acidez. Essencial para acompanhar comidas gordurosas.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 offset-md-2">
+                    <div class="pilar-card p-4 rounded-4 bg-light h-100">
+                        <span class="display-6 text-gold fw-bold">04</span>
+                        <h4 class="brand-font mt-2">Álcool</h4>
+                        <p class="small text-muted">Percebido como uma <b>sensação de calor</b> na garganta ou no fundo da boca. Vinhos equilibrados não deixam o álcool queimar demais.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pilar-card p-4 rounded-4 bg-light h-100">
+                        <span class="display-6 text-gold fw-bold">05</span>
+                        <h4 class="brand-font mt-2">Doçura</h4>
+                        <p class="small text-muted">Não confunda com aroma de fruta. A doçura é o <b>açúcar residual</b>. Vinhos "Secos" têm quase zero, enquanto vinhos de "Sobremesa" são intencionalmente doces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-agnello py-5 mt-5">
+    <div class="container text-center">
+        <div class="footer-logo brand-font fs-2 mb-3">Agnello</div>
+        <p class="mb-1">Agnello © 2026 - Vinhos com Propósito</p>
+        <p class="small text-muted">Desenvolvido por <span class="fw-bold text-gold">Codart</span></p>
+        
+        <div class="social-links mt-4">
+            <a href="#" class="mx-2 text-dark"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="mx-2 text-dark"><i class="bi bi-facebook"></i></a>
+        </div>
+    </div>
+</footer>
+
+    <a href="https://wa.me/5511999999999" target="_blank" class="position-fixed bottom-0 end-0 m-4 shadow-lg d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; background-color: #25d366; color: white; border-radius: 50%; z-index: 1000; text-decoration: none;">
+        <i class="bi bi-whatsapp fs-2"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

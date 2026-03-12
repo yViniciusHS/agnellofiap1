@@ -128,18 +128,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 5. Sistema de Abas (Página de Perfil)
     const profileTabs = document.querySelectorAll('.profile-tab-link');
-    profileTabs.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('data-target');
-            profileTabs.forEach(l => l.classList.remove('active', 'bg-dark', 'text-white'));
-            document.querySelectorAll('.profile-tab-content').forEach(c => c.classList.add('d-none'));
-            link.classList.add('active', 'bg-dark', 'text-white');
-            const targetContent = document.getElementById(targetId);
-            if(targetContent) targetContent.classList.remove('d-none');
-        });
+profileTabs.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('data-target');
+        
+        // Remove estado ativo de todos os links e esconde conteúdos
+        profileTabs.forEach(l => l.classList.remove('active', 'bg-dark', 'text-white'));
+        document.querySelectorAll('.profile-tab-content').forEach(c => c.classList.add('d-none'));
+        
+        // Ativa o link clicado
+        link.classList.add('active', 'bg-dark', 'text-white');
+        
+        // Mostra o conteúdo correspondente
+        const targetContent = document.getElementById(targetId);
+        if(targetContent) {
+            targetContent.classList.remove('d-none');
+            // Animação simples de fade-in
+            targetContent.classList.add('animate__animated', 'animate__fadeIn');
+        }
     });
-
+});
     // 6. Busca Expansível (Header)
     const searchToggleBtn = document.getElementById('searchToggleBtn');
     const expandableSearch = document.querySelector('.expandable-search');

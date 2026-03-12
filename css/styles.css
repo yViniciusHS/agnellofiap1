@@ -395,3 +395,25 @@ body {
     color: var(--gold-color) !important;
 }
 
+.footer-agnello {
+    background-color: #fcfaf7; /* Um creme bem suave para separar do corpo */
+    border-top: 1px solid rgba(0,0,0,0.05);
+    color: #333;
+}
+
+.footer-logo {
+    color: var(--hero-bg); /* O tom vinho que você já usa */
+}
+
+.text-gold {
+    color: #440255; /* Dourado para destacar a Codart */
+}
+
+.social-links a {
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--hero-bg) !important;
+}
