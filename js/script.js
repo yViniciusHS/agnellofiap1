@@ -1,4 +1,4 @@
-// 1. Banco de Dados dos Produtos (Template Dinâmico)
+
 const vinhosData = {
     "sip-happens": {
         nome: "Dona Isabella Chadonnay",
