@@ -19,7 +19,9 @@
                 <button class="cart-btn border-0 bg-transparent text-white" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
                     <i class="bi bi-cart2"></i> <span id="cart-total-header">R$ 0,00</span>
                 </button>
-                <a href="../index.html" class="text-white text-decoration-none ms-2"><i class="bi bi-arrow-left"></i> Voltar</a>
+                <a href="../index.html" class="text-white text-decoration-none ms-2 small text-uppercase letter-spacing-2">
+                    <i class="bi bi-arrow-left"></i> Voltar
+                </a>
             </div>
         </div>
     </header>
@@ -27,38 +29,60 @@
     <main class="container my-5 py-5">
         <div class="row g-5">
             <div class="col-md-6">
-                <div class="product-image-container bg-white rounded-4 shadow-sm p-5 d-flex justify-content-center align-items-center" style="min-height: 500px;">
-                    <img id="product-img" src="" class="product-image img-fluid" alt="Vinho Selecionado">
+                <div class="product-showcase bg-white rounded-5 shadow-sm p-4 d-flex justify-content-center align-items-center position-relative overflow-hidden" style="min-height: 600px;">
+                    <div class="bg-circle" style="position: absolute; width: 400px; height: 400px; background: rgba(0,0,0,0.02); border-radius: 50%; z-index: 0;"></div>
+                    <img id="product-img" src="" class="img-fluid position-relative" alt="Vinho Selecionado" style="max-height: 500px; z-index: 1; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));">
                 </div>
             </div>
             
-            <div class="col-md-6">
-                <span id="product-tag" class="tag mb-3 d-inline-block"></span>
-                <h1 id="product-name" class="display-4 brand-font my-2">Carregando...</h1>
-                <p id="product-price" class="fs-3 fw-bold text-dark">R$ 0,00</p>
-                
-                <p id="product-desc" class="text-muted my-4 lead">
-                    </p>
+            <div class="col-md-6 ps-lg-5">
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb small text-uppercase letter-spacing-2">
+                        <li class="breadcrumb-item"><a href="../index.html" class="text-muted text-decoration-none">Início</a></li>
+                        <li id="product-origin" class="breadcrumb-item active text-dark fw-bold" aria-current="page">Carregando...</li>
+                    </ol>
+                </nav>
 
-                <div class="p-3 border rounded-4 bg-white mb-4">
-                    <h6 class="fw-bold mb-2">Detalhes de Produção</h6>
-                    <p id="product-prod" class="small text-muted mb-0"></p>
+                <span id="product-tag" class="tag mb-3 d-inline-block"></span>
+                <h1 id="product-name" class="display-3 brand-font my-2">Carregando...</h1>
+                <p id="product-price" class="fs-2 fw-light text-dark mb-4">R$ 0,00</p>
+                
+                <p id="product-desc" class="text-muted fs-5 mb-5 fw-light" style="line-height: 1.8;"></p>
+
+                <div class="row g-3 mb-5">
+                    <div class="col-6">
+                        <div class="p-3 border rounded-4 bg-white shadow-sm h-100">
+                            <small class="text-muted d-block text-uppercase mb-1" style="font-size: 0.7rem; letter-spacing: 1px;">País</small>
+                            <span id="product-country" class="fw-bold">---</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-3 border rounded-4 bg-white shadow-sm h-100">
+                            <small class="text-muted d-block text-uppercase mb-1" style="font-size: 0.7rem; letter-spacing: 1px;">Região</small>
+                            <span id="product-region" class="fw-bold">---</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mb-4">
-                    <h6 class="fw-bold mb-3">Perfil Sensorial (Sommelier)</h6>
-                    <div style="max-width: 300px; margin: 0 auto;">
+                <div class="p-4 border rounded-5 bg-white shadow-sm mb-5">
+                    <h6 class="fw-bold mb-3 text-uppercase small letter-spacing-2">Segredos da Vinícola</h6>
+                    <p id="product-prod" class="text-muted mb-0 small" style="line-height: 1.6;"></p>
+                </div>
+
+                <div class="mb-5 p-4 bg-white rounded-5 border shadow-sm">
+                    <h6 class="brand-font text-center mb-4 text-uppercase letter-spacing-2">Notas do Sommelier</h6>
+                    <div style="height: 250px; position: relative;">
                         <canvas id="flavorRadarChart"></canvas>
                     </div>
                 </div>
 
                 <div class="d-grid gap-3">
-                    <button id="add-to-cart-btn" class="btn btn-dark btn-lg rounded-pill py-3 fw-bold">
-                        ADICIONAR AO CARRINHO
+                    <button id="add-to-cart-btn" class="btn btn-dark btn-lg rounded-pill py-3 fw-bold shadow-lg">
+                        <i class="bi bi-bag-plus me-2"></i> ADICIONAR AO CARRINHO
                     </button>
                     <div class="p-3 border rounded-4 d-flex align-items-center gap-3 bg-white">
                         <i class="bi bi-truck text-success fs-4"></i>
-                        <span class="small">Frete grátis em pedidos acima de R$ 500.</span>
+                        <span class="small">Frete grátis em pedidos acima de R$ 500 para todo o Brasil.</span>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,8 @@ const vinhosData = {
         preco: 142.00,
         tag: "BRANCO",
         classeTag: "branco",
+        pais: "Chile",
+        regiao: "Vale de Casablanca",
         imagem: "../img/Gemini_Generated_Image_qdhdkwqdhdkwqdhd (1).png",
         descricao: "Um vinho branco orgânico refrescante, com notas cítricas de maçã verde e um frescor inigualável para dias ensolarados.",
         producao: "Produzido com uvas Chardonnay cultivadas sem agrotóxicos em solos calcários. Fermentação em inox para preservar a pureza da fruta.",
@@ -15,6 +17,8 @@ const vinhosData = {
         preco: 185.00,
         tag: "TINTO",
         classeTag: "tinto",
+        pais: "Argentina",
+        regiao: "Mendoza (Uco)",
         imagem: "../img/Gemini_Generated_Image_qxx5exqxx5exqxx5 (1).png",
         descricao: "Um Cabernet Sauvignon robusto e encorpado, maturado em barricas de carvalho francês com taninos sedosos.",
         producao: "Vinhas de altitude que garantem maturação lenta. Estagiou 12 meses em madeira para complexidade de tabaco e cacau.",
@@ -25,6 +29,8 @@ const vinhosData = {
         preco: 160.00,
         tag: "ROSÉ",
         classeTag: "rose",
+        pais: "França",
+        regiao: "Provence",
         imagem: "../img/Gemini_Generated_Image_42b1mg42b1mg42b1 (1).png",
         descricao: "Leve e vibrante, este rosé traz a essência das frutas silvestres e flores brancas em cada gole.",
         producao: "Elaborado pelo método de sangria com uvas Syrah colhidas manualmente à noite para manter a acidez vibrante.",
@@ -60,18 +66,25 @@ document.addEventListener("DOMContentLoaded", function() {
         const produto = vinhosData[id];
 
         if (produto) {
-            // Preenche textos e imagens
+            // Preenche textos e imagens básicas
             if(document.getElementById('product-name')) document.getElementById('product-name').innerText = produto.nome;
             if(document.getElementById('product-price')) document.getElementById('product-price').innerText = `R$ ${produto.preco.toFixed(2)}`;
             if(document.getElementById('product-desc')) document.getElementById('product-desc').innerText = produto.descricao;
             if(document.getElementById('product-prod')) document.getElementById('product-prod').innerText = produto.producao;
             if(document.getElementById('product-img')) document.getElementById('product-img').src = produto.imagem;
             
-            // Ajusta a Tag (Tinto, Branco, Rosé)
+            // Novos Campos: País e Região
+            if(document.getElementById('product-country')) document.getElementById('product-country').innerText = produto.pais;
+            if(document.getElementById('product-region')) document.getElementById('product-region').innerText = produto.regiao;
+            if(document.getElementById('product-origin')) {
+                document.getElementById('product-origin').innerText = `${produto.tag} • ${produto.pais} (${produto.regiao})`;
+            }
+
+            // Ajusta a Tag Visual
             const tagEl = document.getElementById('product-tag');
             if (tagEl) {
                 tagEl.innerText = produto.tag;
-                tagEl.className = `tag ${produto.classeTag} position-relative d-inline-block mb-3`;
+                tagEl.className = `tag ${produto.classeTag} mb-3 d-inline-block`;
             }
 
             // Configura o botão de compra
@@ -80,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 buyBtn.onclick = () => adicionarAoCarrinho(produto.nome, produto.preco);
             }
 
-            // 4. Inicializa o Gráfico Radar com os dados do produto atual
+            // 4. Inicializa o Gráfico Radar
             const ctx = document.getElementById('flavorRadarChart');
             if (ctx && typeof Chart !== 'undefined') {
                 new Chart(ctx, {
@@ -89,14 +102,24 @@ document.addEventListener("DOMContentLoaded", function() {
                         labels: ['Corpo', 'Taninos', 'Álcool', 'Acidez', 'Doçura'],
                         datasets: [{
                             data: produto.grafico, 
-                            backgroundColor: 'rgba(227, 210, 171, 0.3)', 
+                            backgroundColor: 'rgba(201, 185, 147, 0.2)', 
                             borderColor: '#c9b993', 
-                            pointBackgroundColor: '#2b0b10'
+                            pointBackgroundColor: '#2b0b10',
+                            borderWidth: 2
                         }]
                     },
                     options: { 
-                        scales: { r: { ticks: { display: false }, grid: { color: 'rgba(0,0,0,0.05)' } } }, 
-                        plugins: { legend: { display: false } } 
+                        scales: { 
+                            r: { 
+                                min: 0,
+                                max: 10,
+                                ticks: { display: false }, 
+                                grid: { color: 'rgba(0,0,0,0.05)' },
+                                pointLabels: { font: { size: 11, family: 'Inter' } }
+                            } 
+                        }, 
+                        plugins: { legend: { display: false } },
+                        maintainAspectRatio: false
                     }
                 });
             }
@@ -131,6 +154,29 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+
+    // 7. Lógica de Filtros na Vitrine (Index)
+    const filtrosBotao = document.querySelectorAll('.filter-btn');
+    const cardsVinho = document.querySelectorAll('.product-card');
+
+    filtrosBotao.forEach(botao => {
+        botao.addEventListener('click', (e) => {
+            e.preventDefault();
+            const categoria = botao.getAttribute('data-filter');
+
+            cardsVinho.forEach(card => {
+                const tag = card.querySelector('.tag');
+                if (categoria === 'all' || tag.classList.contains(categoria)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const vitrineSection = document.getElementById('vitrine');
+            if(vitrineSection) vitrineSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
 });
 
 // --- SISTEMA DE CARRINHO (Global) ---
